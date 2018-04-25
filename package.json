@@ -1,0 +1,20 @@
+{
+    "name": "rd-scroll-mixin-behavior-wc",
+    "version": "0.0.1",
+    "description": "This a scroll-behavior to implement by any wc.",
+    "main": "index.js",
+    "keywords": [
+      "scroll", "web-component"
+    ],
+    "author": "Pierre Alibert",
+    "license": "",
+    "repository": {
+      "type": "git",
+      "url": "git+https://git.renault-digital.com/shared/rd-scrollMixinBehavior-wc"
+    },
+    "dependencies": {
+      "@polymer/polymer": "next",
+      "@polymer/iron-flex-layout": "next"
+    }
+  }
+  
