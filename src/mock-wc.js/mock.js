@@ -11,10 +11,14 @@ export class MockWc extends ScrollBehavior(PolymerElement) {
                 :host{
                     height: 300px;
                     width: 50vw;
+                    position: absolute;
+                    top: 50px;
+                    left:50px;
                 }
 
                 ::slotted(*) {
                     height: 70px;
+                    width: 100vw;
                     background: grey;
                     margin:3px;
                 }

@@ -2,6 +2,8 @@ import { afterNextRender } from '@polymer/polymer/lib/utils/render-status';
 import { add } from '@polymer/polymer/lib/utils/gestures';
 import { Debouncer } from '@polymer/polymer/lib/utils/debounce';
 import { animationFrame } from '@polymer/polymer/lib/utils/async';
+import '@polymer/iron-flex-layout/iron-flex-layout';
+import '@polymer/iron-flex-layout/iron-flex-layout-classes';
 import './ascensor-element';
 
 export const ScrollBehavior = (SuperClass) => class extends SuperClass {
@@ -38,10 +40,16 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
     static get template(){
         return `
             ${this.styleTemplate}
-            <div id="container">
-                <slot id="slot"></slot>
-            </div>
+            ${this.containerTemplate}
             ${this.scrollTemplate}
+        `
+    }
+
+    static get containerTemplate() {
+        return `
+        <div id="container">
+            <slot id="slot"></slot>
+        </div>
         `
     }
 
@@ -117,8 +125,8 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
     }
 
     __resizescrollElement() {
-        this.$.scrollElement.style.left = `${this.getBoundingClientRect().left}px`;
-        this.$.scrollElement.style.top = `${this.getBoundingClientRect().top}px`;
+        // this.$.scrollElement.style.left = `${this.getBoundingClientRect().left}px`;
+        // this.$.scrollElement.style.top = `${this.getBoundingClientRect().top}px`;
         this.$.scrollElement.style.width = `${this.getBoundingClientRect().width}px`;
         this.$.scrollElement.style.height = `${this.getBoundingClientRect().height}px`;
         this.$.scrollElement.sizeV = this.getBoundingClientRect().height*(this.getBoundingClientRect().height/this.$.container.getBoundingClientRect().height);
