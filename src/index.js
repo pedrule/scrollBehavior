@@ -112,7 +112,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
         this.needScrollHeight = this.getBoundingClientRect().height < this.$.container.getBoundingClientRect().height;
         this.__adjustWidthOfContainer();
         this.needScrollWidth = this.getBoundingClientRect().width < this.$.container.getBoundingClientRect().width;
-        this.__resizescrollElement();
+        if(this.needScrollHeight)this.__resizescrollElement();
     }
 
     __adjustWidthOfContainer() {
