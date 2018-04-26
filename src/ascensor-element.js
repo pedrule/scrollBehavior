@@ -54,6 +54,7 @@ export class RdAscensor extends PolymerElement{
             .container{
                 background: var(--background-ascensor);
                 transition: width .1s ease-out;
+                overflow: hidden;
             }
 
             .scrollBar{
