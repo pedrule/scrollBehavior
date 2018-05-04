@@ -116,7 +116,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
     }
 
     __adjustWidthOfContainer() {
-        let maxWidth = this.$.slot.assignedNodes().reduce((previous, item) => {
+        let maxWidth = this.$.slot.assignedElements().reduce((previous, item) => {
             let size = item.getBoundingClientRect().width;
             if(size > previous)return size;
             return previous;
