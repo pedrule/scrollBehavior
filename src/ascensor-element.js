@@ -1,4 +1,4 @@
-import { PolymerElement } from "@polymer/polymer/polymer-element";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element";
 
 export class RdAscensor extends PolymerElement{
     static get properties() {
@@ -38,7 +38,7 @@ export class RdAscensor extends PolymerElement{
         }
     }
     static get template() {
-        return `
+        return html`
         <style include="iron-flex iron-flex-alignment">
             :host{
                 pointer-events: none;

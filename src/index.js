@@ -5,6 +5,7 @@ import { animationFrame } from '@polymer/polymer/lib/utils/async';
 import '@polymer/iron-flex-layout/iron-flex-layout';
 import '@polymer/iron-flex-layout/iron-flex-layout-classes';
 import './ascensor-element';
+import { html } from "@polymer/polymer/polymer-element.js";
 
 export const ScrollBehavior = (SuperClass) => class extends SuperClass {
 
@@ -38,7 +39,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
     }
     
     static get template(){
-        return `
+        return html`
             ${this.styleTemplate}
             ${this.containerTemplate}
             ${this.scrollTemplate}
@@ -46,7 +47,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
     }
 
     static get containerTemplate() {
-        return `
+        return html`
         <div id="container">
             <slot id="slot"></slot>
         </div>
@@ -54,7 +55,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
     }
 
     static get styleTemplate() {
-        return `
+        return html`
             <style include="iron-flex iron-flex-alignment">
                 :host{
                     @apply --layout-vertical;
@@ -69,7 +70,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
     }
 
     static get scrollTemplate() {
-        return `
+        return html`
             <rd-scrollbar id="scrollElement" show-v="[[needScrollHeight]]" show-h="[[needScrollWidth]]"></rd-scrollbar>
         `
     }
