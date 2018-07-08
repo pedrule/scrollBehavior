@@ -1,4 +1,4 @@
-import { PolymerElement } from '@polymer/polymer/polymer-element';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { ScrollBehavior } from "../index.js";
 import '@polymer/iron-flex-layout/iron-flex-layout';
 import '@polymer/iron-flex-layout/iron-flex-layout-classes';
@@ -6,7 +6,7 @@ import '@polymer/iron-flex-layout/iron-flex-layout-classes';
 export class MockWc extends ScrollBehavior(PolymerElement) {
 
     static get template() {
-        return `
+        return html`
             <style include="iron-flex iron-flex-alignment">
                 :host{
                     height: 300px;

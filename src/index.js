@@ -12,6 +12,12 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
     static get properties() {
         return {
 
+            isScrollWidth: {
+                type: Boolean,
+                reflectToAttribute: true,
+                value: false
+            },
+
             needScrollHeight: {
                 type : Boolean,
             },
@@ -111,7 +117,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
      */
     __evaluateScroll() {
         this.needScrollHeight = this.getBoundingClientRect().height < this.$.container.getBoundingClientRect().height;
-        this.__adjustWidthOfContainer();
+        if(this.isScrollWidth)this.__adjustWidthOfContainer();
         this.needScrollWidth = this.getBoundingClientRect().width < this.$.container.getBoundingClientRect().width;
         if(this.needScrollHeight)this.__resizescrollElement();
     }
