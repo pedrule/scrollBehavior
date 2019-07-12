@@ -77,7 +77,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
 
     static get scrollTemplate() {
         return html`
-            <rd-scrollbar id="scrollElement" show-v="[[needScrollHeight]]" show-h="[[needScrollWidth]]"></rd-scrollbar>
+            <pedrule-scrollbar id="scrollElement" show-v="[[needScrollHeight]]" show-h="[[needScrollWidth]]"></pedrule-scrollbar>
         `
     }
 
