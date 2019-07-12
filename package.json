@@ -1,17 +1,20 @@
 {
     "name": "@pedrule/scrollbehavior",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "This a scroll-behavior to implement by any wc.",
     "main": "dist/main.bundle.js",
     "publishConfig": {
       "access": "public"
     },
+    "files": [
+      "dist/"
+    ],
     "keywords": [
       "scroll", "web-component"
     ],
     "author": "pedrule",
     "license": "",
-    "dependencies": {
+    "devDependencies": {
       "@polymer/polymer": "next",
       "@polymer/iron-flex-layout": "next"
     }
