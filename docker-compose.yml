@@ -54,10 +54,13 @@ services:
         target: /dist
     ports:
           - "1814:1814"
+
   wc-publish:
     build: 
       context: .
       dockerfile: Dockerfile.publish
+    environment: 
+      - NPM_CRED=$NPM_CRED
     volumes: 
       - type: bind
         source: ./src
