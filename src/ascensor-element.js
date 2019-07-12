@@ -1,6 +1,6 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element";
 
-export class RdAscensor extends PolymerElement{
+export class PedruleAscensor extends PolymerElement{
     static get properties() {
         return {
             showV: {
@@ -144,4 +144,4 @@ export class RdAscensor extends PolymerElement{
         this.isHorizontalScroll = false;
     }
 }
-customElements.define('rd-scrollbar', RdAscensor);
+customElements.define('pedrule-scrollbar', PedruleAscensor);

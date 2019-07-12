@@ -99,7 +99,7 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
         this.addEventListener('update-delta', this._handleOldDelta);
 
         afterNextRender(this, () => {
-            this.__evaluateScroll();
+            this.evaluateScroll();
         })
     }
 
@@ -109,13 +109,14 @@ export const ScrollBehavior = (SuperClass) => class extends SuperClass {
      */
     __handleChangeInDom(mutationList) {
         // we check if height of Element is higher than one of its container.
-        this.__evaluateScroll();
+        this.evaluateScroll();
     }
 
     /**
      * we evaluate if element need scroll element to be used
+     * @public
      */
-    __evaluateScroll() {
+    evaluateScroll() {
         this.needScrollHeight = this.getBoundingClientRect().height < this.$.container.getBoundingClientRect().height;
         if(this.isScrollWidth)this.__adjustWidthOfContainer();
         this.needScrollWidth = this.getBoundingClientRect().width < this.$.container.getBoundingClientRect().width;

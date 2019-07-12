@@ -1,17 +1,16 @@
 {
-    "name": "rd-scroll-mixin-behavior-wc",
+    "name": "@pedrule/scrollbehavior",
     "version": "0.0.1",
     "description": "This a scroll-behavior to implement by any wc.",
-    "main": "index.js",
+    "main": "dist/main.bundle.js",
+    "publishConfig": {
+      "access": "public"
+    },
     "keywords": [
       "scroll", "web-component"
     ],
-    "author": "Pierre Alibert",
+    "author": "pedrule",
     "license": "",
-    "repository": {
-      "type": "git",
-      "url": "git+https://git.renault-digital.com/shared/rd-scrollMixinBehavior-wc"
-    },
     "dependencies": {
       "@polymer/polymer": "next",
       "@polymer/iron-flex-layout": "next"

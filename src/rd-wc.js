@@ -1,5 +1,3 @@
-
-
 export class RdWc extends HTMLElement {
     connectedCallback() {
         this.addTemplate();

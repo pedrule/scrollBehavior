@@ -28,8 +28,8 @@ services:
         - type: bind
           source: ./src
           target: /src
-        - type: volume
-          source: wc
+        - type: bind
+          source: ./dist
           target: /dist
         - type: bind
           source: ./webpack.config.js
@@ -54,7 +54,32 @@ services:
         target: /dist
     ports:
           - "1814:1814"
-
+  wc-publish:
+    build: 
+      context: .
+      dockerfile: Dockerfile.publish
+    volumes: 
+      - type: bind
+        source: ./src
+        target: /app/src
+      - type: bind
+        source: ./.git
+        target: /app/.git
+      - type: bind
+        source: ./.npmrc
+        target: /app/.npmrc
+      - type: bind
+        source: ./package.json
+        target: /app/package.json
+      - type: bind
+        source: ./dist
+        target: /app/dist
+      - type: bind
+        source: ./webpack.config.js
+        target: /app/webpack.config.js
+    working_dir: /app
+    command: /app/node_modules/.bin/polymer serve --port=1814 --hostname 0.0.0.0
+    container_name: wc-scroll-publish
 
 volumes:
   wc:
