@@ -1,6 +1,6 @@
 {
     "name": "@pedrule/scrollbehavior",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "This a scroll-behavior to implement by any wc.",
     "main": "dist/main.bundle.js",
     "publishConfig": {
